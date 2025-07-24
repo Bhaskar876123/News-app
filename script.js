@@ -1,9 +1,9 @@
-const apiKey = "7d9bd675a089e996569c53b569ebc1d1"; // Replace with your GNews API key
+const apiKey = "7d9bd675a089e996569c53b569ebc1d1"; // Your GNews API Key
 const newsContainer = document.getElementById("news-container");
 const categoryButtons = document.querySelectorAll(".category");
 
 window.addEventListener("load", () => {
-  getNews("breaking-news"); // Default category
+  getNews("technology"); // Use a stable category like "technology"
 });
 
 categoryButtons.forEach((btn) => {
@@ -27,7 +27,7 @@ async function getNews(category) {
 }
 
 function displayNews(articles) {
-  newsContainer.innerHTML = ""; // Clear previous content
+  newsContainer.innerHTML = "";
 
   if (!articles || !articles.length) {
     newsContainer.innerHTML = "<p>No news found.</p>";
