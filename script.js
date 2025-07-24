@@ -1,4 +1,4 @@
-const apiKey = "cd172e85044340f98afb585f2bd21e3c";
+const apiKey = "7d9bd675a089e996569c53b569ebc1d1";
 const newsContainer = document.getElementById("news-container");
 const categoryButtons = document.querySelectorAll(".category");
 
