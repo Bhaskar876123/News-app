@@ -1,9 +1,9 @@
-const apiKey = "7d9bd675a089e996569c53b569ebc1d1";
+const apiKey = "7d9bd675a089e996569c53b569ebc1d1"; // Replace with your GNews API key
 const newsContainer = document.getElementById("news-container");
 const categoryButtons = document.querySelectorAll(".category");
 
 window.addEventListener("load", () => {
-  getNews("general"); // Load general news by default
+  getNews("breaking-news"); // Default category
 });
 
 categoryButtons.forEach((btn) => {
@@ -14,9 +14,7 @@ categoryButtons.forEach((btn) => {
 });
 
 async function getNews(category) {
- // const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
   const url = `https://gnews.io/api/v4/top-headlines?token=${apiKey}&lang=en&topic=${category}`;
-
 
   try {
     const res = await fetch(url);
@@ -31,7 +29,7 @@ async function getNews(category) {
 function displayNews(articles) {
   newsContainer.innerHTML = ""; // Clear previous content
 
-  if (!articles.length) {
+  if (!articles || !articles.length) {
     newsContainer.innerHTML = "<p>No news found.</p>";
     return;
   }
@@ -41,7 +39,7 @@ function displayNews(articles) {
     card.className = "news-card";
 
     card.innerHTML = `
-      <img src="${article.urlToImage || 'https://via.placeholder.com/400x200'}" alt="News Image" />
+      <img src="${article.image || 'https://via.placeholder.com/400x200'}" alt="News Image" />
       <div class="content">
         <h3>${article.title}</h3>
         <p>${article.description || "No description available."}</p>
