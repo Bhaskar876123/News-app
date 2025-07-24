@@ -26,7 +26,7 @@ A responsive web application that fetches and displays real-time news headlines 
 ## 🖥️ Live Demo
 
 🔗 [Click here to view the app](https://your-username.github.io/your-repo-name/)  
-(Replace with your actual GitHub Pages link)
 
+    https://bhaskar876123.github.io/News-app/
 ---
 
