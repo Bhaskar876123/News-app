@@ -14,7 +14,9 @@ categoryButtons.forEach((btn) => {
 });
 
 async function getNews(category) {
-  const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
+ // const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
+  const url = `https://gnews.io/api/v4/top-headlines?token=${apiKey}&lang=en&topic=${category}`;
+
 
   try {
     const res = await fetch(url);
